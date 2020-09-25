@@ -25,7 +25,7 @@ public class Driver {
 		driver.quit();
 	}
 	
-	public void waitForLoad() throws InterruptedException {
+	public static void waitForLoad() throws InterruptedException {
 		Thread.sleep(3000);
 	}
 }

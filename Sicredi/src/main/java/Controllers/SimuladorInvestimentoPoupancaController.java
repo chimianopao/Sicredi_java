@@ -24,7 +24,6 @@ public class SimuladorInvestimentoPoupancaController extends BasePageController 
     public void FazSimulacao(Double valorAplicacao, double valorPorMes, int valorTempo, Tempo unidadeTempo) throws InterruptedException
     {
     	super.Navigate();
-    	map.esperando();
         map.InputValorAplicacao().sendKeys(String.format("%.2f", valorAplicacao));
         map.InputValorPorMes().sendKeys(String.format("%.2f", valorPorMes));
         map.InputTempo().sendKeys(String.valueOf(valorTempo));
@@ -36,7 +35,7 @@ public class SimuladorInvestimentoPoupancaController extends BasePageController 
 
         map.ButtonSimular().click();
 
-        //Driver.driver.wait(3000);
+        Driver.waitForLoad();
 
         if (valorAplicacao < 20)
             assert(map.TxtErroValorAplicacao().getText().equals("Valor mínimo de 20.00"));
@@ -46,7 +45,7 @@ public class SimuladorInvestimentoPoupancaController extends BasePageController 
 
         else
         {
-        	assert(map.TxtTextoResultado().getText().equals("Em {valorTempo} meses você terá guardado")):"Tempo em meses não bate com o informado.";
+        	assert(map.TxtTextoResultado().getText().equals("Em "+valorTempo+" meses você terá guardado")):"Tempo em meses não bate com o informado.";
         	assert(map.TxtValorResultado().getText().equals("R$ 647")):"Cálculo de rendimento incorreto";
         	assert(VerificaResultado(valorAplicacao, valorPorMes, valorTempo)):"Cálculo dos próximos 4 anos incorreto";
         }
