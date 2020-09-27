@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Base;
+package base;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,12 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  * @author Theilor
  */
 public class BasePageViewMap extends Driver{
-	//protected WebDriver browser;
-	
-	public BasePageViewMap()
-    {
-        //browser = Driver.driver;
-    }
+	public BasePageViewMap(){ }
 	
 	protected WebElement WaitForVisibilityOfElement(String xpath) {
 		WebDriverWait wait = new WebDriverWait(driver,30);

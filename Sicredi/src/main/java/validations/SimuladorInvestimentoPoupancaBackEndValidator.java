@@ -1,14 +1,16 @@
 package validations;
 
-import Services.InvestimentoService;
+import com.mashape.unirest.http.exceptions.UnirestException;
+
+import services.InvestimentoService;
 
 public class SimuladorInvestimentoPoupancaBackEndValidator {
-	public void ValidaServicoSimuladorPoupanca()
+	public void ValidaServicoSimuladorPoupanca() throws UnirestException
     {
-        String dados = "{\"id\":1,\"meses\":[\"112\",\"124\",\"136\",\"148\"],\"valor\":[\"2.802\",\"3.174\",\"3.564\",\"3.971\"]}";
+        String dados = "{\"meses\":[\"112\",\"124\",\"136\",\"148\"],\"valor\":[\"2.802\",\"3.174\",\"3.564\",\"3.971\"],\"id\":1}";
 
         InvestimentoService service = new InvestimentoService();
-        var result = service.GetService().Content;
-        Assert.AreEqual(result, dados,"O resultado difere do valor esperado.");
+        String result = service.GetService();
+        assert(result.equals(dados)) :"O resultado difere do valor esperado.\nEsperado: "+dados+"\nRecebido: "+result;
     }
 }

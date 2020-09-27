@@ -2,7 +2,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import Base.Driver;
+import base.Driver;
 import validations.SimuladorInvestimentoPoupancaFrontEndValidator;
 
 public class SimuladorInvestimentoPoupancaFrontEndTest {

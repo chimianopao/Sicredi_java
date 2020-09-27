@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controllers;
+package controllers;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import Base.BasePageViewMap;
-import Base.Driver;
-import ViewMaps.SimuladorInvestimentoPoupancaViewMap;
+import base.BasePageViewMap;
+import base.Driver;
+import viewMaps.SimuladorInvestimentoPoupancaViewMap;
 
 
 /**

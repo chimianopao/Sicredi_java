@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ViewMaps;
+package viewMaps;
 
 import org.openqa.selenium.WebElement;
 
-import Base.BasePageViewMap;
+import base.BasePageViewMap;
 
 /**
  *
@@ -71,10 +71,5 @@ public class SimuladorInvestimentoPoupancaViewMap extends BasePageViewMap {
         }
         public WebElement Txt4Valor() {
         	return GetWebElementByXPath("//table/tbody/tr[4]/td[2]");
-        
         }
-        
-        
-        
-        
 }
